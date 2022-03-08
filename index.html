@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Kit of Parts</title>
+        <link rel="stylesheet" type="text/css"href="style.css">
+        <style>
+            body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+            input {width: 90%;}
+            #container {position: relative;}
+            #overlay {z-index: 1; width: 100%}
+
+            #loader {
+                border: 5px solid #f3f3f3; /* Light grey */
+                border-top: 5px solid #3d3d3d; /* Grey */
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                animation: spin 1s linear infinite;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 2;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="loader"></div> 
+        <div id="container">
+            <div id="overlay">
+                <div>
+                    <input type="range" id="numberofparts" name="numberofparts" min="1" max="100" value="1" step="1">
+                    <label for="numberofparts">Number of Parts</label>
+                </div>
+                <div>
+                    <input type="range" id="seed" name="seed" min="1" max="100" value="1" step="1">
+                    <label for="seed">Seed</label>
+                </div>
+                <div>
+                    <input type="range" id="meshsubD" name="mesh/subD" min="0" max="1" value="1" step="1">
+                    <label for="meshsubD">Mesh/SubD</label>
+                </div>
+                <div class="container">
+                    <h1>Reset</h1>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                      </label>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="script.js"></script>
+    </body>
+</html>

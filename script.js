@@ -51,6 +51,7 @@ async function compute() {
 
     const param1 = new RhinoCompute.Grasshopper.DataTree('numberofparts')
     param1.append([0], [numberofparts_slider.valueAsNumber])
+    console.log(param1)
 
     const param2 = new RhinoCompute.Grasshopper.DataTree('seed')
     param2.append([0], [seed_slider.valueAsNumber])
@@ -87,6 +88,8 @@ async function compute() {
         }
     }
 
+  
+
 
     // clear objects from scene
     scene.traverse(child => {
@@ -102,6 +105,7 @@ async function compute() {
         scene.add(object)
         // hide spinner
         document.getElementById('loader').style.display = 'none'
+        console.log(object)
 
     })
 }

@@ -33,6 +33,13 @@
         <div id="loader"></div> 
         <div id="container">
             <div id="overlay">
+                <div id="header00">
+                    <div id="logo">
+                        <img src="./assets/iaac-logo.png" width="120px"></div>
+                        <h1>K I T - O F - P A R T S</h1>
+                    <br><div class="text1"><h3>Student- Naitik Sharma</h3>
+                    </div>
+                </div>
                 <div>
                     <input type="range" id="numberofparts" name="numberofparts" min="1" max="100" value="1" step="1">
                     <label for="numberofparts">Number of Parts</label>
@@ -45,12 +52,18 @@
                     <input type="range" id="meshsubD" name="mesh/subD" min="0" max="1" value="1" step="1">
                     <label for="meshsubD">Mesh/SubD</label>
                 </div>
-                <div class="container">
+                <!-- <div class="container">
                     <h1>Reset</h1>
                     <label class="switch">
                         <input type="checkbox">
                         <span class="slider"></span>
                       </label>
+                </div> -->
+                <div id="Button">
+                    <button id="downloadButton" onclick="download() enabled">
+                    Download the Model</button>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>

@@ -92,20 +92,24 @@ async function compute() {
 
 
     // clear objects from scene
-    scene.traverse(child => {
-        if (!child.isLight) {
-            scene.remove(child)
-        }
-    })
+
 
 
     const buffer = new Uint8Array(doc.toByteArray()).buffer
     loader.parse(buffer, function (object) {
 
+        scene.traverse(child => {
+            //if (!child.isLight) {
+            if (child.isMesh){
+                scene.remove(child)
+            }
+        })
+
         scene.add(object)
         // hide spinner
         document.getElementById('loader').style.display = 'none'
         console.log(object)
+
 
     })
 }
